@@ -2,18 +2,46 @@ import { InferSchemaType, Schema } from "mongoose";
 import mongoose from "../config/database";
 
 const InstagramSchema = new Schema({
-    id: { type: String, required: true },
-    username: { type: String, required: true },
-    profile_picture: { type: String, required: true },
-    full_name: { type: String, required: true },
-    bio: { type: String, required: true },
-    website: { type: String, required: true },
-    is_business: { type: Boolean, required: true },
-    media: { type: Array, required: true },
-    followers: { type: Number, required: true },
-    following: { type: Number, required: true },
-    created_at: { type: Date, default: Date.now },
-    updated_at: { type: Date, default: Date.now },
+    account: String,
+    userName: String,
+    followersAtPosting: Number,
+    postCreated: Date,
+    postCreatedDate: Date,
+    postCreatedTime: String,
+    type: String,
+    totalInteractions: {
+        type: Number,
+        default: 0
+    },
+    likes: {
+        type: Number,
+        default: 0
+    },
+    comments: {
+        type: Number,
+        default: 0
+    },
+    views: {
+        type: Number,
+        default: 0
+    },
+    likeAndViewCountsDisabled: Boolean,
+    url: String,
+    link: String,
+    photo: String,
+    title: String,
+    description: String,
+    imageText: String,
+    sponsorId: String,
+    sponsorName: String,
+    totalInteractionsWeighted: {
+        type: Number,
+        default: 0
+    },
+    overperformingScore: {
+        type: Number,
+        default: 0
+    }
 });
 
 const InstagramCollection = mongoose.model('Instagram', InstagramSchema);
