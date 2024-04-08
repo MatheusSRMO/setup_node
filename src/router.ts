@@ -1,6 +1,6 @@
 import { Router } from "express";
-// import { firstController } from "./app/controller/FirstController";
 import InstagramController from "./controller/InstagramController";
+
 const router: Router = Router()
 
 //Routes
